@@ -1,752 +1,85 @@
-# [Material Dashboard 2 React NodeJS API](https://material-dashboard-react-nodejs.creative-tim.com) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=Check%20Material%20Dashboard%20%20PRO%20React%20made%20by%20%40CreativeTim%20and%20%40UPDIVISION%20%23webdesign%20%23dashboard%20%23react%20%23mui&url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-dashboard-react-node)
+<h1 align="center">BlueBird-Movies</h1>
+BlueBird-Movies is a React-based movie website that allows users to search for movies by title, sort them by genre, view trending and upcoming movies, and bookmark their favorite movies. The website is designed to be user-friendly and visually appealing.
+<hr/>
 
-![version](https://img.shields.io/badge/version-2.1.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-dashboard-react.svg)](https://github.com/creativetimofficial/material-dashboard-react-nodejs/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-dashboard-react.svg)](https://github.com/creativetimofficial/material-dashboard-react-nodejs/issues?q=is%3Aissue+is%3Aclosed)
+![background](https://user-images.githubusercontent.com/87109400/231843668-00e0d9aa-8447-4148-8a3a-0b68135c0795.png)
 
+<hr/>
 
-[<img src="https://s3.amazonaws.com/creativetim_bucket/products/157/original/react-material-dashboard-nodejs.jpg?1664786816"/>](https://www.creative-tim.com/product/material-dashboard-react-nodejs)
+# 🍿 Features 
 
-**Documentation built by Developers**
+- Search movies: users can search for movies by title
+- Genre-wise display: movies can be sorted by genre
+- Trending Movies: displays a section for trending movies
+- Upcoming movies: displays a section for upcoming movies
+- Movie Details: users can view detailed information about each movie
+- Bookmark Movies: users can bookmark their favorite movies for later viewing
+- Google Authentication: users can sign in using their Google account
 
-Each element is well presented in very complex documentation.
+<hr/>
 
-You can read more about the [documentation here](https://material-dashboard-react-node-docs.creative-tim.com/react/login/material-dashboard-node/).
+# 🍿 Technology
 
-**Example Pages**
+BlueBird-Movies is built using the following technologies:
 
-If you want to get inspiration or just show something directly to your clients, you can jump-start your development with our pre-built example pages. You will be able to quickly set up the basic structure for your web project.
+- ReactJS
+- TMDB API
+- Firebase Google Authentication
+- Framer Motion
 
-View [example pages here](https://material-dashboard-react-nodejs.creative-tim.com/auth/login).
+<hr/>
 
-**HELPFUL LINKS**
+# 🍿 How to Run the Website on Your System
 
-- View [Github Repository](https://github.com/creativetimofficial/material-dashboard-react-nodejs)
-- Check [FAQ Page](https://www.creative-tim.com/faq)
+## Step 1: Download and Extract the Code
 
-#### Special thanks
+Firstly, download the entire website code and extract the ZIP file to a folder on your local system.
 
-During the development of this dashboard, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
+## Step 2: Obtain the TMDB Movies API Key and Firebase Configuration
 
-- [MUI](https://mui.com/) - The React UI library for faster and easier web development.
-- [React ChartJS 2](http://reactchartjs.github.io/react-chartjs-2/#/) - Simple yet flexible React charting for designers & developers.
-- [ChromaJS](https://gka.github.io/chroma.js/) - A small-ish zero-dependency JavaScript library for all kinds of color conversions and color scales.
+Before starting the website, you will need to obtain the TMDB Movies API key and Firebase configuration. Follow these steps to obtain them and add them to your `.env` file.
 
-Let us know your thoughts below. And good luck with development!
+### ▶️ Get TMDB API Key 
 
-If you want to get more features, go PRO with [Material Dashboard 2 PRO React NodeJS API](https://www.creative-tim.com/product/material-dashboard-pro-react-nodejs).
+- Go to https://www.themoviedb.org/ and log in.
+- Click on your user profile picture in the navigation bar, and select "Settings".
+- In the settings, select "API" and generate an API key.
 
-## Table of Contents
+### ▶️ Firebase Setup 
 
-- [Versions](#versions)
-- [Demo](#demo)
-- [Quick Start](#quick-start)
-- [Documentation](#documentation)
-- [Login](#login)
-- [Register](#register)
-- [Forgot Password](#forgot-password)
-- [Reset Password](#reset-password)
-- [User Profile](#user-profile)
-- [File Structure](#file-structure)
-- [Browser Support](#browser-support)
-- [Resources](#resources)
-- [Reporting Issues](#reporting-issues)
-- [Technical Support or Questions](#technical-support-or-questions)
-- [Licensing](#licensing)
-- [Useful Links](#useful-links)
+Note that Firebase is only required for Google authentication. If you are not using Google authentication in your application, you can skip this step.
 
-## Versions
+- Go to the Firebase Console and create a new app.
+- After creating the app, build a web app by clicking "Add App" and following the instructions.
 
-[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react-logo.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-pro-react?ref=readme-mdpr)
-[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/laravel-logo.png" width="60" height="60" />](https://www.creative-tim.com/product/react-material-dashboard-pro-laravel?ref=readme-mdpr)
-[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/nodejs-logo.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-pro-react-nodejs?ref=readme-mdpr)
+![Firebase Add App Screenshot](https://user-images.githubusercontent.com/87109400/231569204-445d8007-fe75-4012-a21b-a71f4f4bc697.png)
 
-| React + Laravel JSON:API                                                                                                                                                                                                                                                   | React + NodeJS                                                                                                                                                                                                                                                               |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Material Dashboard 2 React Laravel JSON:API](https://s3.amazonaws.com/creativetim_bucket/products/686/original/react-material-dashboard-laravel.jpg?1664783836)](https://react-material-dashboard-laravel.creative-tim.com/auth/login?ref=readme-mdpr) | [![Material Dashboard 2 React NodeJS API](https://s3.amazonaws.com/creativetim_bucket/products/157/original/react-material-dashboard-nodejs.jpg?1664786816)](https://material-dashboard-react-nodejs.creative-tim.com/auth/login?ref=readme-mdpr) |
+![Firebase Build App Screenshot](https://user-images.githubusercontent.com/87109400/231568774-1ea09ada-34b8-4035-80d4-90ac79c1c8ed.png)
 
+- Copy the configuration information provided in the green line, and paste it into the `.env` file:
 
-| React                                                                                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [<img src="https://s3.amazonaws.com/creativetim_bucket/products/71/original/material-dashboard-react.jpg?1638950990" width="400" />](https://demos.creative-tim.com/material-dashboard-react/#/dashboard?ref=readme-mdpr) |
+![image](https://user-images.githubusercontent.com/87109400/231570250-9256c1bc-6669-423a-8b95-06d9577485a0.png)
 
-## Demo
+- Next, to activate Google authentication in Firebase, go to **Build > Authentication** and enable Google authentication.
+- To use Google authentication in localhost, add your localhost/127.0.0.1 as an Authorized Domain at **Build > Authentication > Settings > Authorized Domains** and add localhost or 127.0.0.1 to this section.
 
-| Register                                                                                                                                       | Login                                                                                                                                    | Dashboard                                                                                                                                   |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<img src="material-react-app/public/images/register.png" width="322" />](https://material-dashboard-react-nodejs.creative-tim.com/auth/register) | [<img src="material-react-app/public/images/login.png" width="322" />](https://material-dashboard-react-nodejs.creative-tim.com/auth/login) | [<img src="material-react-app/public/images/dashboard.png" width="322" />](https://material-dashboard-react-nodejs.creative-tim.com/dashboard) |
+![image](https://user-images.githubusercontent.com/87109400/231575419-ca703ebd-5380-45b6-8afe-33b9c1af778e.png)
 
-| Forgot Password Page                                                                                                                                         | Reset Password Page                                                                                                                    | Profile Page                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<img src="material-react-app/public/images/forgot-password.png" width="320" />](https://material-dashboard-react-nodejs.creative-tim.com/auth/forgot-password) | [<img src="material-react-app/public/images/reset-password.png" width="312" />](https://material-dashboard-react-nodejs.creative-tim.com) | [<img src="material-react-app/public/images/profile.png" width="330" />](https://material-dashboard-react-nodejs.creative-tim.com/user-profile) |
+## Step 3: Run the Website
 
-[View More](https://react-material-dashboard-laravel.creative-tim.com)
+Open your code editor (such as VS Code) and navigate to the project directory. Then, open a terminal and run the following command:
 
-## Quick start
-
-## Prerequisites
-
-For your local development you need to have `Node.js` and `npm` version 16 or above installed and a registered MongoDB collection:
-- For Windows: https://phoenixnap.com/kb/install-node-js-npm-on-windows
-- For Linux: https://www.geeksforgeeks.org/installation-of-node-js-on-linux/
-- For Mac: https://treehouse.github.io/installation-guides/mac/node-mac.html
-
-## ExpressJS API Backend Installation
-
-To install the project you need to have version 16 of Node.js and npm version 8. The first step is to run `npm install` command. Next you need to copy the `.env.example` file and name it `.env`. There are the variables for the database and the URLs:
-- DB_LINK="mongodb-link-to-connect"
-
-- JWT_SECRET="token"
-
-- APP_URL_CLIENT= with the default value of http://localhost:3000
-- APP_URL_API= with the default value of http://localhost:8080
-
-## Material React Frontend Installation
-
-1. Set up your api for the project
-2. Download and Install NodeJs LTS version from [NodeJs Official Page](https://nodejs.org/en/download/).
-3. Navigate to the root ./ directory of the product and run `yarn install` or `npm install` to install our local dependencies.
-4. Add in your projeact an .env file with the variables
- - `REACT_APP_URL=your-react-project`
- - `REACT_APP_API_URL=the-path-of-the-api`
- - `REACT_APP_IS_DEMO=false` if you don't want any restrictions and true if you want
-5. In `package.json` in the `proxy` variable add the right path to your API
-6. Run `yarn start` or `npm start`
-
-## Documentation
-
-The documentation for the Material Dashboard is hosted at our [website](https://material-dashboard-react-node-docs.creative-tim.com/react/overview/material-dashboard-node/?ref=readme-mdpr).
-
-The documentation for the ExpressJS API is hosted [here](https://documenter.getpostman.com/view/8138626/Uze1virp).
-
-## Login
-
-If a user is not logged in can access only the authentication pages: Login, Register and Forgot Password. By default, there **admin@jsonapi.com** with password **secret** as credentials.
-For authentication context and protected routes were used to keep track of the state of the users. Axios together with an http service and helped by an auth service and crud service handled the requests. The **/src/service** keeps the logic of the services while **/src/context** has the logic for the different contexts used, including the authentication context.
-
-In the **/src/auth/login/index.js** is the logic for logging in an existing user:
-
+```bash
+npm run dev
 ```
-    try {
-      const response = await AuthService.login(myData);
-      authContext.login(response.access_token, response.refresh_token);
-    } catch (res) {
-      if (res.hasOwnProperty("message")) {
-        setCredentialsError(res.message);
-      } else {
-        setCredentialsError(res.errors[0].detail);
-      }
-    }
-```
+This will start the application. Open a web browser and navigate to http://localhost:3000 to access the website.
 
-## Register
+Note: Ensure that you have carefully added the TMDB API key and Firebase authentication configuration to your .env file. If the .env file is not working, add all the API keys and configuration manually.
 
-It can be added a new user by registration. The user has a name, email, password and role that needs to be added. All the inputs are verified and validated. You can simply access the page with the **Sign up** button or adding **/register** in the url.
+<hr/>
 
-In the **/src/auth/register/index.js** is the logic for signing up a new user:
+# 🍿 Demo 
 
-```
-    const response = await AuthService.register(myData);
-
-    authContext.login(response.access_token, response.refresh_token);
-```
-
-## Forgot Password
-
-In case of forgetting its password, the user can go to a page where he adds the email of the account and an email will be send to that address to help with resetting the password. It can be accessed from the Login page by clicking the **here** button or by adding **/forgot-password**.
-
-In the **/src/auth/forgot-password/index.js** is the logic for requesting a password reset:
-
-```
-    try {
-      const response = await authService.forgotPassword(myData);
-      if (error === false) {
-        setNotification(true);
-      }
-    } catch (err) {
-      console.error(err);
-      return null;
-    }
-```
-
-## Reset Password
-
-For resetting the password, the user must acceess the url sent int the email. By adding the new password and the confirmation and then pressing the **channge** button the data of the account is updated. You can go back to login from the button in notification.
-
-In the **/src/auth/reset-password/index.js** is the logic for resetting the password:
-
-```
-  useEffect(() => {
-    // get the token and email sent in the url
-    const queryParams = new URLSearchParams(window.location.search);
-    setToken(queryParams.get("token"));
-    setEmail(queryParams.get("email"));
-  }, []);
-```
-
-## User Profile
-
-From the sidenav, in the CRUDs section, or by adding **/cruds/user-profile** in the url, the User Profile is a dynamic page where the user can add details about him: profile image, name, email or change password. Validation is added for every input.
-
-In the **/src/services/auth-serivce** you can find the routes sets for the request and in the **/src/cruds/user-profile** is the component for the editing the profile details.
-
-```
-  getProfile = async() => {
-    const getProfile = 'me';
-    return await HttpService.get(getProfile);
-  }
-
-  updateProfile = async (newInfo) => {
-    const updateProfile = "me";
-    return await HttpService.patch(updateProfile, newInfo);
-  }
-```
-
-### What's included
-
-Within the download you'll find the following directories and files:
-
-```
-./src
-├── App.js
-├── assets
-│   ├── images
-│   │   ├── apple-icon.png
-│   │   ├── bg-profile.jpeg
-│   │   ├── bg-reset-cover.jpeg
-│   │   ├── bg-sign-in-basic.jpeg
-│   │   ├── bg-sign-up-cover.jpeg
-│   │   ├── bruce-mars.jpg
-│   │   ├── favicon.png
-│   │   ├── home-decor-1.jpg
-│   │   ├── home-decor-2.jpg
-│   │   ├── home-decor-3.jpg
-│   │   ├── home-decor-4.jpeg
-│   │   ├── icons
-│   │   │   └── flags
-│   │   │       ├── AU.png
-│   │   │       ├── BR.png
-│   │   │       ├── DE.png
-│   │   │       ├── GB.png
-│   │   │       └── US.png
-│   │   ├── illustrations
-│   │   │   └── pattern-tree.svg
-│   │   ├── ivana-square.jpg
-│   │   ├── kal-visuals-square.jpg
-│   │   ├── logo-ct-dark.png
-│   │   ├── logo-ct.png
-│   │   ├── logos
-│   │   │   ├── gray-logos
-│   │   │   │   ├── logo-coinbase.svg
-│   │   │   │   ├── logo-nasa.svg
-│   │   │   │   ├── logo-netflix.svg
-│   │   │   │   ├── logo-pinterest.svg
-│   │   │   │   ├── logo-spotify.svg
-│   │   │   │   └── logo-vodafone.svg
-│   │   │   ├── mastercard.png
-│   │   │   └── visa.png
-│   │   ├── marie.jpg
-│   │   ├── small-logos
-│   │   │   ├── bootstrap.svg
-│   │   │   ├── creative-tim.svg
-│   │   │   ├── devto.svg
-│   │   │   ├── github.svg
-│   │   │   ├── google-webdev.svg
-│   │   │   ├── icon-bulb.svg
-│   │   │   ├── logo-asana.svg
-│   │   │   ├── logo-atlassian.svg
-│   │   │   ├── logo-invision.svg
-│   │   │   ├── logo-jira.svg
-│   │   │   ├── logo-slack.svg
-│   │   │   ├── logo-spotify.svg
-│   │   │   └── logo-xd.svg
-│   │   ├── team-1.jpg
-│   │   ├── team-2.jpg
-│   │   ├── team-3.jpg
-│   │   ├── team-4.jpg
-│   │   └── team-5.jpg
-│   ├── theme
-│   │   ├── base
-│   │   │   ├── borders.js
-│   │   │   ├── boxShadows.js
-│   │   │   ├── breakpoints.js
-│   │   │   ├── colors.js
-│   │   │   ├── globals.js
-│   │   │   └── typography.js
-│   │   ├── components
-│   │   │   ├── appBar.js
-│   │   │   ├── avatar.js
-│   │   │   ├── breadcrumbs.js
-│   │   │   ├── button
-│   │   │   │   ├── contained.js
-│   │   │   │   ├── index.js
-│   │   │   │   ├── outlined.js
-│   │   │   │   ├── root.js
-│   │   │   │   └── text.js
-│   │   │   ├── buttonBase.js
-│   │   │   ├── card
-│   │   │   │   ├── cardContent.js
-│   │   │   │   ├── cardMedia.js
-│   │   │   │   └── index.js
-│   │   │   ├── container.js
-│   │   │   ├── dialog
-│   │   │   │   ├── dialogActions.js
-│   │   │   │   ├── dialogContent.js
-│   │   │   │   ├── dialogContentText.js
-│   │   │   │   ├── dialogTitle.js
-│   │   │   │   └── index.js
-│   │   │   ├── divider.js
-│   │   │   ├── flatpickr.js
-│   │   │   ├── form
-│   │   │   │   ├── autocomplete.js
-│   │   │   │   ├── checkbox.js
-│   │   │   │   ├── formControlLabel.js
-│   │   │   │   ├── formLabel.js
-│   │   │   │   ├── input.js
-│   │   │   │   ├── inputLabel.js
-│   │   │   │   ├── inputOutlined.js
-│   │   │   │   ├── radio.js
-│   │   │   │   ├── select.js
-│   │   │   │   ├── switchButton.js
-│   │   │   │   └── textField.js
-│   │   │   ├── iconButton.js
-│   │   │   ├── icon.js
-│   │   │   ├── linearProgress.js
-│   │   │   ├── link.js
-│   │   │   ├── list
-│   │   │   │   ├── index.js
-│   │   │   │   ├── listItem.js
-│   │   │   │   └── listItemText.js
-│   │   │   ├── menu
-│   │   │   │   ├── index.js
-│   │   │   │   └── menuItem.js
-│   │   │   ├── popover.js
-│   │   │   ├── sidenav.js
-│   │   │   ├── slider.js
-│   │   │   ├── stepper
-│   │   │   │   ├── index.js
-│   │   │   │   ├── stepConnector.js
-│   │   │   │   ├── stepIcon.js
-│   │   │   │   ├── step.js
-│   │   │   │   └── stepLabel.js
-│   │   │   ├── svgIcon.js
-│   │   │   ├── table
-│   │   │   │   ├── tableCell.js
-│   │   │   │   ├── tableContainer.js
-│   │   │   │   └── tableHead.js
-│   │   │   ├── tabs
-│   │   │   │   ├── index.js
-│   │   │   │   └── tab.js
-│   │   │   └── tooltip.js
-│   │   ├── functions
-│   │   │   ├── boxShadow.js
-│   │   │   ├── gradientChartLine.js
-│   │   │   ├── hexToRgb.js
-│   │   │   ├── linearGradient.js
-│   │   │   ├── pxToRem.js
-│   │   │   └── rgba.js
-│   │   ├── index.js
-│   │   └── theme-rtl.js
-│   └── theme-dark
-│       ├── base
-│       │   ├── borders.js
-│       │   ├── boxShadows.js
-│       │   ├── breakpoints.js
-│       │   ├── colors.js
-│       │   ├── globals.js
-│       │   └── typography.js
-│       ├── components
-│       │   ├── appBar.js
-│       │   ├── avatar.js
-│       │   ├── breadcrumbs.js
-│       │   ├── button
-│       │   │   ├── contained.js
-│       │   │   ├── index.js
-│       │   │   ├── outlined.js
-│       │   │   ├── root.js
-│       │   │   └── text.js
-│       │   ├── buttonBase.js
-│       │   ├── card
-│       │   │   ├── cardContent.js
-│       │   │   ├── cardMedia.js
-│       │   │   └── index.js
-│       │   ├── container.js
-│       │   ├── dialog
-│       │   │   ├── dialogActions.js
-│       │   │   ├── dialogContent.js
-│       │   │   ├── dialogContentText.js
-│       │   │   ├── dialogTitle.js
-│       │   │   └── index.js
-│       │   ├── divider.js
-│       │   ├── form
-│       │   │   ├── autocomplete.js
-│       │   │   ├── checkbox.js
-│       │   │   ├── formControlLabel.js
-│       │   │   ├── formLabel.js
-│       │   │   ├── input.js
-│       │   │   ├── inputLabel.js
-│       │   │   ├── inputOutlined.js
-│       │   │   ├── radio.js
-│       │   │   ├── select.js
-│       │   │   ├── switchButton.js
-│       │   │   └── textField.js
-│       │   ├── iconButton.js
-│       │   ├── icon.js
-│       │   ├── linearProgress.js
-│       │   ├── link.js
-│       │   ├── list
-│       │   │   ├── index.js
-│       │   │   ├── listItem.js
-│       │   │   └── listItemText.js
-│       │   ├── menu
-│       │   │   ├── index.js
-│       │   │   └── menuItem.js
-│       │   ├── popover.js
-│       │   ├── sidenav.js
-│       │   ├── slider.js
-│       │   ├── stepper
-│       │   │   ├── index.js
-│       │   │   ├── stepConnector.js
-│       │   │   ├── stepIcon.js
-│       │   │   ├── step.js
-│       │   │   └── stepLabel.js
-│       │   ├── svgIcon.js
-│       │   ├── table
-│       │   │   ├── tableCell.js
-│       │   │   ├── tableContainer.js
-│       │   │   └── tableHead.js
-│       │   ├── tabs
-│       │   │   ├── index.js
-│       │   │   └── tab.js
-│       │   └── tooltip.js
-│       ├── functions
-│       │   ├── boxShadow.js
-│       │   ├── gradientChartLine.js
-│       │   ├── hexToRgb.js
-│       │   ├── linearGradient.js
-│       │   ├── pxToRem.js
-│       │   └── rgba.js
-│       ├── index.js
-│       └── theme-rtl.js
-├── auth
-│   ├── forgot-password
-│   │   └── index.js
-│   ├── login
-│   │   └── index.js
-│   ├── register
-│   │   └── index.js
-│   └── reset-password
-│       └── index.js
-├── components
-│   ├── MDAlert
-│   │   ├── index.js
-│   │   ├── MDAlertCloseIcon.js
-│   │   └── MDAlertRoot.js
-│   ├── MDAvatar
-│   │   ├── index.js
-│   │   └── MDAvatarRoot.js
-│   ├── MDBadge
-│   │   ├── index.js
-│   │   └── MDBadgeRoot.js
-│   ├── MDBox
-│   │   ├── index.js
-│   │   └── MDBoxRoot.js
-│   ├── MDButton
-│   │   ├── index.js
-│   │   └── MDButtonRoot.js
-│   ├── MDInput
-│   │   ├── index.js
-│   │   └── MDInputRoot.js
-│   ├── MDPagination
-│   │   ├── index.js
-│   │   └── MDPaginationItemRoot.js
-│   ├── MDProgress
-│   │   ├── index.js
-│   │   └── MDProgressRoot.js
-│   ├── MDSnackbar
-│   │   ├── index.js
-│   │   └── MDSnackbarIconRoot.js
-│   └── MDTypography
-│       ├── index.js
-│       └── MDTypographyRoot.js
-├── context
-│   └── index.js
-├── examples
-│   ├── Breadcrumbs
-│   │   └── index.js
-│   ├── Cards
-│   │   ├── BlogCards
-│   │   │   └── SimpleBlogCard
-│   │   │       └── index.js
-│   │   ├── InfoCards
-│   │   │   ├── DefaultInfoCard
-│   │   │   │   └── index.js
-│   │   │   └── ProfileInfoCard
-│   │   │       └── index.js
-│   │   ├── MasterCard
-│   │   │   └── index.js
-│   │   ├── ProjectCards
-│   │   │   └── DefaultProjectCard
-│   │   │       └── index.js
-│   │   └── StatisticsCards
-│   │       └── ComplexStatisticsCard
-│   │           └── index.js
-│   ├── Charts
-│   │   ├── BarCharts
-│   │   │   ├── HorizontalBarChart
-│   │   │   │   ├── configs
-│   │   │   │   │   └── index.js
-│   │   │   │   └── index.js
-│   │   │   ├── ReportsBarChart
-│   │   │   │   ├── configs
-│   │   │   │   │   └── index.js
-│   │   │   │   └── index.js
-│   │   │   └── VerticalBarChart
-│   │   │       ├── configs
-│   │   │       │   └── index.js
-│   │   │       └── index.js
-│   │   ├── BubbleChart
-│   │   │   ├── configs
-│   │   │   │   └── index.js
-│   │   │   └── index.js
-│   │   ├── DoughnutCharts
-│   │   │   └── DefaultDoughnutChart
-│   │   │       ├── configs
-│   │   │       │   └── index.js
-│   │   │       └── index.js
-│   │   ├── LineCharts
-│   │   │   ├── DefaultLineChart
-│   │   │   │   ├── configs
-│   │   │   │   │   └── index.js
-│   │   │   │   └── index.js
-│   │   │   ├── GradientLineChart
-│   │   │   │   ├── configs
-│   │   │   │   │   └── index.js
-│   │   │   │   └── index.js
-│   │   │   ├── ProgressLineChart
-│   │   │   │   ├── config
-│   │   │   │   │   └── index.js
-│   │   │   │   └── index.js
-│   │   │   └── ReportsLineChart
-│   │   │       ├── configs
-│   │   │       │   └── index.js
-│   │   │       └── index.js
-│   │   ├── MixedChart
-│   │   │   ├── configs
-│   │   │   │   └── index.js
-│   │   │   └── index.js
-│   │   ├── PieChart
-│   │   │   ├── configs
-│   │   │   │   └── index.js
-│   │   │   └── index.js
-│   │   ├── PolarChart
-│   │   │   ├── configs
-│   │   │   │   └── index.js
-│   │   │   └── index.js
-│   │   └── RadarChart
-│   │       ├── configs
-│   │       │   └── index.js
-│   │       └── index.js
-│   ├── Configurator
-│   │   ├── ConfiguratorRoot.js
-│   │   └── index.js
-│   ├── Footer
-│   │   └── index.js
-│   ├── Items
-│   │   └── NotificationItem
-│   │       ├── index.js
-│   │       └── styles.js
-│   ├── LayoutContainers
-│   │   ├── DashboardLayout
-│   │   │   └── index.js
-│   │   └── PageLayout
-│   │       └── index.js
-│   ├── Lists
-│   │   └── ProfilesList
-│   │       └── index.js
-│   ├── Navbars
-│   │   ├── DashboardNavbar
-│   │   │   ├── index.js
-│   │   │   └── styles.js
-│   │   └── DefaultNavbar
-│   │       ├── DefaultNavbarLink.js
-│   │       ├── DefaultNavbarMobile.js
-│   │       └── index.js
-│   ├── ProtectedRoute
-│   │   └── index.js
-│   ├── Sidenav
-│   │   ├── index.js
-│   │   ├── SidenavCollapse.js
-│   │   ├── SidenavRoot.js
-│   │   └── styles
-│   │       ├── sidenavCollapse.js
-│   │       └── sidenav.js
-│   ├── Tables
-│   │   └── DataTable
-│   │       ├── DataTableBodyCell.js
-│   │       ├── DataTableHeadCell.js
-│   │       └── index.js
-│   └── Timeline
-│       ├── context
-│       │   └── index.js
-│       ├── TimelineItem
-│       │   ├── index.js
-│       │   └── styles.js
-│       └── TimelineList
-│           └── index.js
-├── index.js
-├── layouts
-│   ├── authentication
-│   │   ├── components
-│   │   │   ├── BasicLayout
-│   │   │   │   └── index.js
-│   │   │   ├── CoverLayout
-│   │   │   │   └── index.js
-│   │   │   └── Footer
-│   │   │       └── index.js
-│   │   ├── reset-password
-│   │   │   └── cover
-│   │   │       └── index.js
-│   │   ├── sign-in
-│   │   │   └── index.js
-│   │   └── sign-up
-│   │       └── index.js
-│   ├── billing
-│   │   ├── components
-│   │   │   ├── Bill
-│   │   │   │   └── index.js
-│   │   │   ├── BillingInformation
-│   │   │   │   └── index.js
-│   │   │   ├── Invoice
-│   │   │   │   └── index.js
-│   │   │   ├── Invoices
-│   │   │   │   └── index.js
-│   │   │   ├── PaymentMethod
-│   │   │   │   └── index.js
-│   │   │   ├── Transaction
-│   │   │   │   └── index.js
-│   │   │   └── Transactions
-│   │   │       └── index.js
-│   │   └── index.js
-│   ├── dashboard
-│   │   ├── components
-│   │   │   ├── OrdersOverview
-│   │   │   │   └── index.js
-│   │   │   └── Projects
-│   │   │       ├── data
-│   │   │       │   └── index.js
-│   │   │       └── index.js
-│   │   ├── data
-│   │   │   ├── reportsBarChartData.js
-│   │   │   └── reportsLineChartData.js
-│   │   └── index.js
-│   ├── notifications
-│   │   └── index.js
-│   ├── profile
-│   │   ├── components
-│   │   │   ├── Header
-│   │   │   │   └── index.js
-│   │   │   └── PlatformSettings
-│   │   │       └── index.js
-│   │   ├── data
-│   │   │   └── profilesListData.js
-│   │   └── index.js
-│   ├── rtl
-│   │   ├── components
-│   │   │   ├── OrdersOverview
-│   │   │   │   └── index.js
-│   │   │   └── Projects
-│   │   │       ├── data
-│   │   │       │   └── index.js
-│   │   │       └── index.js
-│   │   ├── data
-│   │   │   ├── reportsBarChartData.js
-│   │   │   └── reportsLineChartData.js
-│   │   └── index.js
-│   ├── tables
-│   │   ├── data
-│   │   │   ├── authorsTableData.js
-│   │   │   └── projectsTableData.js
-│   │   └── index.js
-│   ├── user-management
-│   │   ├── data.js
-│   │   └── index.js
-│   └── user-profile
-│       ├── Header
-│       │   └── index.js
-│       ├── index.js
-│       └── PlatformSettings
-│           └── index.js
-├── routes.js
-└── services
-    ├── auth-service.js
-    ├── htttp.service.js
-    └── interceptor.js
-```
-
-## Browser Support
-
-At present, we officially aim to support the last two versions of the following browsers:
-
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
-
-## Resources
-
-- [Live Preview](https://github.com/teamupdivision/material-dashboard-react-node-free?ref=readme-mdr)
-- [Download Page]https://www.creative-tim.com/product/material-dashboard-react-nodejs?ref=readme-mdr)
-- Documentation is [here](https://material-dashboard-react-node-docs.creative-tim.com/react/quick-start/material-dashboard-node/?ref=readme-mdr)
-- [License Agreement](https://www.creative-tim.com/license?ref=readme-mdr)
-- [Support](https://www.creative-tim.com/contact-us?ref=readme-mdr)
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/material-dashboard-react-nodejs/issues)
-
-## Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the Material Dashboard React. Here are some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Material Dashboard React. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/material-dashboard-react-nodejs?ref=readme-mdr).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
-
-## Technical Support or Questions
-
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us?ref=readme-mdr) instead of opening an issue.
-
-## Licensing
-
-- Copyright 2021 [Creative Tim](https://www.creative-tim.com?ref=readme-mdr)
-- Creative Tim [license](https://www.creative-tim.com/license?ref=readme-mdr)
-
-## Useful Links
-
-- [More products](https://www.creative-tim.com/templates?ref=readme-mdr) from Creative Tim
-
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-mdr) from Creative Tim
-
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-mdr) (earn money)
-
-### Social Media
-
-### Creative Tim:
-
-Twitter: <https://twitter.com/CreativeTim?ref=mdl-readme>
-
-Facebook: <https://www.facebook.com/CreativeTim?ref=mdl-readme>
-
-Dribbble: <https://dribbble.com/creativetim?ref=mdl-readme>
-
-Instagram: <https://www.instagram.com/CreativeTimOfficial?ref=mdl-readme>
-
-### Updivision:
-
-Twitter: <https://twitter.com/updivision?ref=mdl-readme>
-
-Facebook: <https://www.facebook.com/updivision?ref=mdl-readme>
-
-Linkedin: <https://www.linkedin.com/company/updivision?ref=mdl-readme>
-
-Updivision Blog: <https://updivision.com/blog/?ref=mdl-readme>
-
-## Credits
-
-- [Creative Tim](https://creative-tim.com/?ref=mdl-readme)
-- [UPDIVISION](https://updivision.com)
+- Check out our live demo at https://bluebirdmovies.netlify.app/ 
+ 
+- Youtube video : https://www.youtube.com/watch?v=mGqOOtEGmJc.
